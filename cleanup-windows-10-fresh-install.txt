@@ -1,0 +1,63 @@
+
+1. remove windows biometrics (face, fingerprint)
+Group Policies > Administrative templates > Windows components > Biometrics
+-- double-click an item, then 'enable' or disable'
+
+
+2. remove bloatware apps
+
+Powershell (run as administrator)
+
+Get-AppxPackage | Select Name, PackageFullName
+
+then print list
+select apps to remove (for all users)
+
+
+Name                                         PackageFullName
+----                                         ---------------
+Microsoft.SkypeApp                           Microsoft.SkypeApp_14.35.152.0_x64__kzf8qxf38zg5c
+MirametrixInc.GlancebyMirametrix             MirametrixInc.GlancebyMirametrix_5.203.47680.0_x64__17mer8kcn3j54
+Microsoft.ZuneVideo                          Microsoft.ZuneVideo_10.18111.17311.0_x64__8wekyb3d8bbwe
+Microsoft.ZuneMusic                          Microsoft.ZuneMusic_10.18111.17311.0_x64__8wekyb3d8bbwe
+Microsoft.YourPhone                          Microsoft.YourPhone_0.0.13313.0_x64__8wekyb3d8bbwe
+Microsoft.XboxSpeechToTextOverlay            Microsoft.XboxSpeechToTextOverlay_1.17.29001.0_x64__8wekyb3d8bbwe
+Microsoft.XboxIdentityProvider               Microsoft.XboxIdentityProvider_12.50.6001.0_x64__8wekyb3d8bbwe
+Microsoft.XboxGamingOverlay                  Microsoft.XboxGamingOverlay_2.26.14003.0_x64__8wekyb3d8bbwe
+Microsoft.XboxGameOverlay                    Microsoft.XboxGameOverlay_1.32.17005.0_x64__8wekyb3d8bbwe
+Microsoft.XboxApp                            Microsoft.XboxApp_48.48.7001.0_x64__8wekyb3d8bbwe
+Microsoft.Xbox.TCUI                          Microsoft.Xbox.TCUI_1.23.28002.0_x64__8wekyb3d8bbwe
+Microsoft.OneConnect                         Microsoft.OneConnect_5.1902.361.0_x64__8wekyb3d8bbwe
+Microsoft.People                             Microsoft.People_10.1812.10232.0_x64__8wekyb3d8bbwe
+Microsoft.Office.OneNote                     Microsoft.Office.OneNote_16001.11126.20076.0_x64__8wekyb3d8bbwe
+Microsoft.MixedReality.Portal                Microsoft.MixedReality.Portal_2000.19010.1151.0_x64__8wekyb3d8bbwe
+Microsoft.MicrosoftOfficeHub                 Microsoft.MicrosoftOfficeHub_18.1901.1141.0_x64__8wekyb3d8bbwe
+Microsoft.Microsoft3DViewer                  Microsoft.Microsoft3DViewer_5.1902.20012.0_x64__8wekyb3d8bbwe
+Microsoft.Messaging                          Microsoft.Messaging_4.1901.10241.0_x64__8wekyb3d8bbwe
+Microsoft.Getstarted                         Microsoft.Getstarted_7.3.20251.0_x64__8wekyb3d8bbwe
+Microsoft.GetHelp                            Microsoft.GetHelp_10.1706.13331.0_x64__8wekyb3d8bbwe
+
+
+Commands to run
+
+get-appxpackage -allusers *microsoft.skypeapp* | remove-appxpackage
+get-appxpackage -allusers *mirametrixinc.glancebymirametrix* | remove-appxpackage
+get-appxpackage -allusers *microsoft.zunevideo* | remove-appxpackage
+get-appxpackage -allusers *microsoft.zunemusic* | remove-appxpackage
+get-appxpackage -allusers *microsoft.yourphone* | remove-appxpackage
+get-appxpackage -allusers *microsoft.xboxspeechtotextoverlay* | remove-appxpackage
+get-appxpackage -allusers *microsoft.xboxidentityprovider* | remove-appxpackage
+get-appxpackage -allusers *microsoft.xboxgamingoverlay* | remove-appxpackage
+get-appxpackage -allusers *microsoft.xboxgameoverlay* | remove-appxpackage
+get-appxpackage -allusers *microsoft.xboxapp* | remove-appxpackage
+get-appxpackage -allusers *microsoft.xbox.tcui* | remove-appxpackage
+get-appxpackage -allusers *microsoft.oneconnect* | remove-appxpackage
+get-appxpackage -allusers *microsoft.people* | remove-appxpackage
+get-appxpackage -allusers *microsoft.office.onenote* | remove-appxpackage
+get-appxpackage -allusers *microsoft.mixedreality.portal* | remove-appxpackage
+get-appxpackage -allusers *microsoft.microsoftofficehub* | remove-appxpackage
+get-appxpackage -allusers *microsoft.microsoft3dviewer* | remove-appxpackage
+get-appxpackage -allusers *microsoft.microsoftmessaging* | remove-appxpackage
+get-appxpackage -allusers *microsoft.messaging* | remove-appxpackage
+get-appxpackage -allusers *microsoft.getstarted* | remove-appxpackage
+get-appxpackage -allusers *microsoft.gethelp* | remove-appxpackage
