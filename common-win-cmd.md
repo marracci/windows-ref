@@ -15,4 +15,8 @@ to rotate images, right click in the empty space of the monitor and select 'next
 --------------------------
 
 
+disable an account login
+$ net user accountname						# gets information about accountname
+$ net user accountname /active:no    		# disables the accountname from logging in
 
+--------------------------
